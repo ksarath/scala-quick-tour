@@ -17,7 +17,7 @@ object PersonApp extends App {
   // map, flatMap, filter, find, findLast, fold, foldLeft, reduce, reduceLeft etc..
 
   // Change `Array` in below code to List, Seq, Set, Vector, Queue & LazyList
-  val array1 = Vector(1, 2, 3, 4)
+  val array1 = Array(1, 2, 3, 4)
   val array2 = array1.map(v => v * 2)
   val array3 = array1.map(v => Array(v, v * 2))
   val array4 = array1.flatMap(v => Array(v, v * 2)) // array3.flatten

@@ -15,6 +15,8 @@ object PersonApp extends App {
       map(_.toInt).
       recover(_ => 0) // recoverWith in case you have an alternate option to try out
 
+  resultOfDiv.recoverWith(_ => Try(0))
+
   println(resultOfDiv)
   println(resultOfDiv.isSuccess) // Better way is to pattern match
   println(resultOfDiv.isFailure) // Better way is to pattern match
