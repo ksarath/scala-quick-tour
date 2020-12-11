@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'scala'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    ext {
+        scalaMajorV = '2.13'
+        scalaV = '2.13.3'
+        json4sV = '3.6.10'
+        scalaLoggingV = '3.9.2'
+        slf4jV = '1.7.30'
+    }
+
+    implementation 'org.nanohttpd:nanohttpd:2.3.1'
+    implementation 'org.scala-lang:scala-library:' + scalaV
+    implementation 'org.json4s:json4s-core_' +  scalaMajorV + ':' + json4sV
+    implementation 'org.json4s:json4s-jackson_' + scalaMajorV + ':' + json4sV
+    implementation 'org.json4s:json4s-ext_' + scalaMajorV + ':' + json4sV
+    implementation 'com.typesafe.scala-logging:scala-logging_' + scalaMajorV + ':' + scalaLoggingV
+    implementation 'org.slf4j:slf4j-simple:' + slf4jV
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
